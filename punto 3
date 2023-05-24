@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+// Método para obtener el número invertido
+int getInvertNumber(int number) {
+    int invertedNumber = 0;
+    
+    while (number != 0) {
+        invertedNumber = invertedNumber * 10 + (number % 10);
+        number /= 10;
+    }
+    
+    return invertedNumber;
+}
+
+// Método principal
+int main() {
+    int number;
+    
+    printf("Ingrese un número: ");
+    scanf("%d", &number);
+    
+    int invertedNumber = getInvertNumber(number);
+    printf("Número invertido: %d\n", invertedNumber);
+    
+    return 0;
+}
