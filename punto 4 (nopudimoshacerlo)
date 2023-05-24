@@ -1,0 +1,52 @@
+Algoritmo InterpretacionAlgoritmos
+FinProceso
+	
+Proceso getRevertText(texto como Cadena) 
+	
+	
+	Definir i como Entero
+	Definir textoInvertido como Cadena
+		
+		longitud = longitud,texto 
+		textoInvertido = ""
+		
+		Para i = longitud Hasta 1 Con Paso -1 Hacer
+			textoInvertido = textoInvertido + SubCadena(texto, i, 1)
+		FinPara
+		
+		Escribir "Texto invertido: ", textoInvertido
+FinProceso
+
+
+Proceso getInvertNumber(numero como Entero)
+	Definir numeroInvertido, digito como Cadena
+		
+		numeroInvertido = ""
+		
+		Mientras numero <> 0 Hacer
+			digito = ConvertirATexto(numero % 10)
+			numeroInvertido = numeroInvertido + digito
+			numero = numero // 10
+		FinMientras
+		
+		Escribir "Número invertido: ", ConvertiraEntero(numeroInvertido)
+FinProceso
+
+
+Proceso Principal
+Definir texto como Cadena
+Definir numero como Entero
+	
+	Escribir "Ingrese un texto: "
+	Leer texto
+	
+	getRevertText(texto)
+	
+	Escribir "Ingrese un número: "
+	Leer numero
+	
+	getInvertNumber(numero)
+	
+FinProceso
+
+FinAlgoritmo
