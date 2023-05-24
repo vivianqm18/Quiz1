@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+char* getRevertText(const char* text) {
+    int length = strlen(text);
+    char* reversedText = malloc((length + 1) * sizeof(char));
+   
+    for (int i = 0; i < length; i++) {
+        reversedText[i] = text[length - 1 - i];
+    }
+   
+    reversedText[length] = '\0';
+    return reversedText;
+}
+
+
+int main() {
+    char text[100];
+   
+    printf("Ingrese un texto: ");
+    fgets(text, sizeof(text), stdin);
+    text[strcspn(text, "\n")] = '\0';
+   
+    char* reversedText = getRevertText(text);
+    printf("Texto invertido: %s\n", reversedText);
+   
+    free(reversedText);
+   
+    return 0;
+}
